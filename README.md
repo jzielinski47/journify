@@ -1,1 +1,3 @@
-# journify
+# Journify - Your personal RoadTrip Mate
+
+
