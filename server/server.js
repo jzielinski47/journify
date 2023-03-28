@@ -5,7 +5,7 @@ const path = require("path");
 const app = express();
 const server = http.createServer(app);
 const WebSocket = require("ws");
-const { getUniqueID } = require("./utils");
+
 
 const port = 8000;
 
@@ -20,7 +20,7 @@ webSocketServer.on('connection', (socket, req) => {
     })
 
     socket.on('message', message => {
-        console.log('recieved %s', message)
+        console.log(`[recieved]: %s`, message)
         listenForTraffic(socket, message)
     })
 
@@ -29,6 +29,11 @@ webSocketServer.on('connection', (socket, req) => {
 
 const listenForTraffic = (socket, message) => {
 
+}
+
+const getUniqueID = () => {
+    const s4 = () => { return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1) }
+    return s4() + s4() + s4() + '-' + s4() + s4() + s4()
 }
 
 server.listen(port, () => console.log(`app listening on port ${port}`))

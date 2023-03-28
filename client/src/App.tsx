@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import { useEffect, useState } from 'react'
 import './App.css'
 import { client as ws } from './main'
@@ -17,7 +19,7 @@ const App = () => {
   }, [])
 
   const sendData = (message: string) => {
-    ws.send('Hey, its me')
+    ws.send('new client login')
   }
 
   return (
