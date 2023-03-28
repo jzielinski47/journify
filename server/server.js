@@ -21,6 +21,7 @@ webSocketServer.on('connection', (socket, req) => {
 
     socket.on('message', message => {
         console.log(`[recieved]: %s`, message)
+        socket.send('[server recieved]')
         listenForTraffic(socket, message)
     })
 
