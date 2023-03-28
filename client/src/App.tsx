@@ -7,10 +7,13 @@ const App = () => {
 
   useEffect(() => {
 
-    ws.addEventListener('open', () => {
+    ws.onopen = () => {
       console.log('connected');
       setIsConnected(!isConnected)
-    })
+    }
+
+    ws.onmessage = ({ data }) => { console.log(data) }
+
   }, [])
 
   const sendData = (message: string) => {
