@@ -9,12 +9,14 @@ const port = 8000;
 
 const webSocketServer = new WebSocket.Server({ server: server });
 webSocketServer.on('connection', (socket, req) => {
+
     console.log('new client connected');
 
-    socket.on('close', () => {
-        console.log('client disconnected')
-
+    socket.on('message', data => {
+        console.log('client says: ' + data)
     })
+
+    socket.on('close', () => console.log('client disconnected'))
 });
 
 server.listen(port, () => console.log(`app listening on port ${port}`))
