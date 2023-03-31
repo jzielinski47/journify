@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import './App.css'
-import { client as ws } from './main'
+import { client as ws } from '.'
 
 const App = () => {
   const [isConnected, setIsConnected] = useState(false)
