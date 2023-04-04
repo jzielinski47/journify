@@ -1,7 +1,6 @@
 //@ts-nocheck
 
 import { useEffect, useState } from 'react'
-import './App.css'
 import { client as ws } from '.'
 
 const App = () => {
@@ -25,6 +24,8 @@ const App = () => {
   return (
     <div className='App'>
       {isConnected.toString()}
+      <input />
+      <input />
       <button onClick={() => sendData('kupa')}>send</button>
     </div>
   )
