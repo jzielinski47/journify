@@ -6,8 +6,14 @@ const app = express();
 const server = http.createServer(app);
 const WebSocket = require("ws");
 
-
 const port = 8000;
+
+let login;
+let password;
+
+const users = []
+const usernames = []
+const sessions = []
 
 const webSocketServer = new WebSocket.Server({ server: server });
 webSocketServer.on('connection', (socket, req) => {
@@ -21,8 +27,8 @@ webSocketServer.on('connection', (socket, req) => {
 
     socket.on('message', message => {
         console.log(`[recieved]: %s`, message)
-        socket.send('[server recieved]')
         listenForTraffic(socket, message)
+        // socket.send(`[server recieved] ${message}`)
     })
 
     socket.on('close', () => console.log('client disconnected'))
@@ -30,6 +36,45 @@ webSocketServer.on('connection', (socket, req) => {
 
 const listenForTraffic = (socket, message) => {
 
+    const msg = message.toString().split('&');
+    switch (msg[0]) {
+        case '%login':
+
+            login = msg[1].split('=')[1]
+            password = msg[2].split('=')[1]
+
+            break;
+
+        case '%register':
+
+            login = msg[1].split('=')[1]
+            password = msg[2].split('=')[1]
+
+            if (login.length > 0) {
+                if (!usernames.includes(login) && !sessions.includes(socket.id)) {
+
+                    let data = { id: socket.id, name: login, password: password }
+
+                    users.push(data);
+                    usernames.push(login);
+                    sessions.push(socket.id)
+
+                    socket.send(`user ${login} created`)
+                } else if (sessions.includes(socket.id)) {
+                    socket.send(`You can't create another account in the same session`)
+                } else {
+                    socket.send(`user ${login} exists`)
+                }
+            } else {
+                socket.send(`your login is too short`)
+            }
+
+
+
+            console.log(users)
+
+
+    }
 }
 
 const getUniqueID = () => {
