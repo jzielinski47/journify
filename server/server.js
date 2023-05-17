@@ -15,8 +15,6 @@ const users = []
 const usernames = []
 const sessions = []
 
-const activeUsers = []
-
 const webSocketServer = new WebSocket.Server({ server: server });
 webSocketServer.on('connection', (socket, req) => {
 
@@ -25,18 +23,14 @@ webSocketServer.on('connection', (socket, req) => {
 
     webSocketServer.clients.forEach(client => {
         console.log('Client ID: ' + client.id);
-        activeUsers.push(client.id)
     })
 
     socket.on('message', message => {
         console.log(`[recieved]: %s`, message)
         listenForTraffic(socket, message)
-        // socket.send(`[server recieved] ${message}`)
-        console.log('%a', activeUsers)
     })
 
     socket.on('close', () => {
-        activeUsers = activeUsers.filter(userID => userID != socket.id)
         console.log('client disconnected')
     })
 });
@@ -47,17 +41,29 @@ const listenForTraffic = (socket, message) => {
     switch (msg[0]) {
         case '%login':
 
-            login = msg[1].split('=')[1]
-            password = msg[2].split('=')[1]
+            login = msg[1].split('=')[1].toString()
+            password = msg[2].split('=')[1].toString()
+
+            if (usernames.includes(login)) {
+                users.forEach(user => {
+                    if (user.name === login && user.password === password) {
+                        socket.send('%authorized=' + socket.id)
+                    } else {
+                        socket.send(`password is not correct`)
+                    }
+                })
+            } else {
+                socket.send(`username is not correct`)
+            }
 
             break;
 
         case '%register':
 
-            login = msg[1].split('=')[1]
-            password = msg[2].split('=')[1]
+            login = msg[1].split('=')[1].toString()
+            password = msg[2].split('=')[1].toString()
 
-            if (login.length > 0) {
+            if (login.length > 0 && password.length > 0) {
                 if (!usernames.includes(login) && !sessions.includes(socket.id)) {
 
                     let data = { id: socket.id, name: login, password: password }
@@ -73,7 +79,7 @@ const listenForTraffic = (socket, message) => {
                     socket.send(`user ${login} exists`)
                 }
             } else {
-                socket.send(`your login is too short`)
+                socket.send(`your login or your password is too short`)
             }
 
 

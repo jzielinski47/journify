@@ -9,6 +9,8 @@ const App = () => {
   const [login, setLogin] = useState('');
   const [passwd, setPasswd] = useState('');
 
+  const [id, setID] = useState('')
+
   useEffect(() => {
 
     ws.onopen = () => {
@@ -16,7 +18,15 @@ const App = () => {
       setIsConnected(!isConnected)
     }
 
-    ws.onmessage = ({ data }) => { console.log(data) }
+    ws.onmessage = ({ data }) => {
+
+      if (data.startsWith('%authorized')) {
+        setID(data.split('=')[1])
+      } else {
+        console.log(data)
+      }
+
+    }
 
   }, [])
 
@@ -30,6 +40,8 @@ const App = () => {
 
   return (
     <div className='App'>
+
+      {id}
 
       <div className='loginForm'>
         <input type='text' onChange={(e) => setLogin(e.target.value)} />
