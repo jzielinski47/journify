@@ -51,7 +51,7 @@ body {
 @media (prefers-color-scheme: dark) {
   :root {
     color: #e0e0e0;
-    background-color: #121212;
+    background-color: #1e1e1e;
   }
 
   a:hover {
@@ -96,6 +96,10 @@ body {
     color: #A82830;
   }
 
+  .loginForm {
+    background-color: #121212;
+  }
+
 }
 
 h2,
@@ -111,10 +115,13 @@ p {
   gap: 1rem;
   align-items: center;
 
-  padding: 1.5rem 3rem;
-  border-radius: 1rem;
+  padding: 4rem 3rem;
+  border-radius: 2rem;
 }
 
+button {
+  border-radius: 2rem;
+}
 
 button,
 input {
@@ -126,6 +133,8 @@ input {
   /* border-radius: 2em; */
   border: none;
   font-size: 0.8em;
+  min-width: 320px;
+  max-width: 560px;
 }
 
 .label {
