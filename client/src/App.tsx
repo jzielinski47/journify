@@ -31,10 +31,13 @@ const App = () => {
   return (
     <div className='App'>
 
-      <input type='text' onChange={(e) => setLogin(e.target.value)} />
-      <input type='password' onChange={(e) => setPasswd(e.target.value)} />
-      <button onClick={() => sendLoginData()}>login</button>
-      <button onClick={() => sendRegisterData()}>register</button>
+      <div className='loginForm'>
+        <input type='text' onChange={(e) => setLogin(e.target.value)} />
+        <input type='password' onChange={(e) => setPasswd(e.target.value)} />
+        <button onClick={() => sendLoginData()}>login</button>
+        <button onClick={() => sendRegisterData()}>register</button>
+      </div>
+
 
     </div>
   )

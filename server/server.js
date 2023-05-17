@@ -15,6 +15,8 @@ const users = []
 const usernames = []
 const sessions = []
 
+const activeUsers = []
+
 const webSocketServer = new WebSocket.Server({ server: server });
 webSocketServer.on('connection', (socket, req) => {
 
@@ -23,15 +25,20 @@ webSocketServer.on('connection', (socket, req) => {
 
     webSocketServer.clients.forEach(client => {
         console.log('Client ID: ' + client.id);
+        activeUsers.push(client.id)
     })
 
     socket.on('message', message => {
         console.log(`[recieved]: %s`, message)
         listenForTraffic(socket, message)
         // socket.send(`[server recieved] ${message}`)
+        console.log('%a', activeUsers)
     })
 
-    socket.on('close', () => console.log('client disconnected'))
+    socket.on('close', () => {
+        activeUsers = activeUsers.filter(userID => userID != socket.id)
+        console.log('client disconnected')
+    })
 });
 
 const listenForTraffic = (socket, message) => {
