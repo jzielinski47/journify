@@ -43,11 +43,18 @@ const App = () => {
 
       {id}
 
+
+
       <div className='loginForm'>
-        <input type='text' onChange={(e) => setLogin(e.target.value)} />
-        <input type='password' onChange={(e) => setPasswd(e.target.value)} />
-        <button onClick={() => sendLoginData()}>login</button>
-        <button onClick={() => sendRegisterData()}>register</button>
+        <h2>Sign in</h2>
+        <p>Connect your Journify account.<br />Don't have an account? <span className='fake-link'>Sign up!</span></p>
+
+        <span className='label'>Username</span>
+        <input type='text' onChange={(e) => setLogin(e.target.value)} placeholder='Login' />
+        <span className='label'>Password</span>
+        <input type='password' onChange={(e) => setPasswd(e.target.value)} placeholder='Password' />
+        <button className='btn-hmp' onClick={() => sendLoginData()}>Login</button>
+        <button className='btn-mmp' onClick={() => sendRegisterData()}>Register</button>
       </div>
 
 
