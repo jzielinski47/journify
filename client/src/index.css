@@ -23,6 +23,16 @@ body {
   min-height: 100vh;
 }
 
+
+#root,
+.App {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -82,6 +92,10 @@ body {
     color: #7662D3;
   }
 
+  .error {
+    color: #A82830;
+  }
+
 }
 
 h2,
@@ -114,9 +128,12 @@ input {
   font-size: 0.8em;
 }
 
-
 .label {
   width: 100%;
   text-align: left;
+  font-size: 0.8em;
+}
+
+.error {
   font-size: 0.8em;
 }

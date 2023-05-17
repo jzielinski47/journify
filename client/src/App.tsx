@@ -12,6 +12,8 @@ const App = () => {
   const [isConnected, setIsConnected] = useState(false)
   const [isPasswordShown, setIsPasswordShown] = useState(false)
 
+  const [errorMessage, setErrorMessage] = useState('')
+
   const [login, setLogin] = useState('');
   const [passwd, setPasswd] = useState('');
 
@@ -26,10 +28,13 @@ const App = () => {
 
     ws.onmessage = ({ data }) => {
 
+      setErrorMessage('')
+
       if (data.startsWith('%authorized')) {
         setID(data.split('=')[1])
       } else {
         console.log(data)
+        setErrorMessage(data)
       }
 
     }
@@ -58,6 +63,7 @@ const App = () => {
         <input type='text' onChange={(e) => setLogin(e.target.value)} placeholder='Login' />
         <span className='label'>Password</span>
         <input type={isPasswordShown ? 'text' : 'password'} onChange={(e) => setPasswd(e.target.value)} placeholder='Password' />
+        <p className='error'>{errorMessage}</p>
         <button className='btn-hmp' onClick={() => sendLoginData()}>Login</button>
         <button className='btn-mmp' onClick={() => sendRegisterData()}>Sign up</button>
       </div>
