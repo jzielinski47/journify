@@ -12,6 +12,14 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --primary-color: #bb86fc;
+  --primary-30-color: #66488b;
+  --primary-14-color: #5f4283;
+
+  --secondary-color: #a586fc;
+  --secondary-30-color: #634f99;
+  --secondary-14-color: #66529c;
 }
 
 * {
@@ -20,21 +28,27 @@
 
 body {
   margin: 0;
+  padding: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   min-width: 320px;
   min-height: 100vh;
+  overflow: hidden;
 }
 
 
-#root,
+#root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+}
+
 .App {
   margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   min-height: 100vh;
+  width: 100%;
 }
 
 @media (prefers-color-scheme: light) {
@@ -62,25 +76,32 @@ body {
     color: #747bff;
   }
 
-  .loginPanel {
+  .loginPanelWrapper {
     background-color: #1e1e1e;
+    border: 1px solid #272727;
+  }
+
+  button {
+    border: none;
+    transition: 1s all ease;
   }
 
   .btn-hmp {
-    background-color: #7662D3;
-  }
-
-  .btn-hmp:hover {
-    background-color: #4a3c87;
+    color: #212121;
+    background-color: var(--primary-color);
   }
 
   .btn-mmp {
-    color: #A0A0A0;
-    background-color: #242424;
+    color: #212121;
+    background-color: var(--secondary-color);
+  }
+
+  .btn-hmp:hover {
+    background-color: var(--primary-30-color);
   }
 
   .btn-mmp:hover {
-    background-color: #1E1E1E;
+    background-color: var(--secondary-30-color);
   }
 
   input {
@@ -97,13 +118,11 @@ body {
   }
 
   .fake-link {
-    color: #7662D3;
+    color: var(--primary-color);
   }
 
   .error {
     color: #A82830;
   }
-
-
 
 }

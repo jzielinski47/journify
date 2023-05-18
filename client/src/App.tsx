@@ -2,12 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import { client as ws } from '.'
-import LoginPanel from './components/LoginPanel/LoginPanel'
+
+import LoginScreen from './screens/LoginScreen'
 
 const App = () => {
 
   const [isConnected, setIsConnected] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const [id, setID] = useState('')
 
   useEffect(() => {
 
@@ -35,9 +37,7 @@ const App = () => {
 
   return (
     <div className='App'>
-
-      <LoginPanel ws={ws} errorMessage={errorMessage} />
-
+      <LoginScreen ws={ws} errorMessage={errorMessage} id={id} />
     </div>
   )
 }

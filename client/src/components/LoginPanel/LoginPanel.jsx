@@ -8,33 +8,45 @@ library.add(fas)
 
 import './LoginPanel.css'
 
-const LoginPanel = ({ ws, errorMessage }) => {
+const LoginPanel = ({ ws, errorMessage, id }) => {
 
     const [isPasswordShown, setIsPasswordShown] = useState(false)
 
     const [login, setLogin] = useState('');
     const [passwd, setPasswd] = useState('');
-    const [id, setID] = useState('')
 
     const sendLoginData = () => ws.send(`%login&login=${login}&passwd=${passwd}`)
 
     const sendRegisterData = () => ws.send(`%register&login=${login}&passwd=${passwd}`)
 
     return (
-        <div className='loginPanel'>
-            <FontAwesomeIcon icon="fa-solid fa-car-burst" bounce size='2xl' style={{ color: "#ffffff" }} onClick={() => setIsPasswordShown(!isPasswordShown)} />
-            <h2>Sign in</h2>
-            <p>Connect your Journify account.<br />Don't have an account? <span className='fake-link'>Sign up!</span></p>
-            <p> {id}</p>
+        <div className='loginPanelWrapper'>
 
-            <span className='label'>Username</span>
-            <input type='text' onChange={(e) => setLogin(e.target.value)} placeholder='Login' />
-            <span className='label'>Password</span>
-            <input type={isPasswordShown ? 'text' : 'password'} onChange={(e) => setPasswd(e.target.value)} placeholder='Password' />
-            <p>Forgot password?</p>
-            <p className='error'>{errorMessage}</p>
-            <button className='btn-hmp' onClick={() => sendLoginData()}>Login</button>
-            <button className='btn-mmp' onClick={() => sendRegisterData()}>Sign up</button>
+            <div className='headline wrapper'>
+                <FontAwesomeIcon icon="fa-solid fa-car-burst" bounce size='2xl' style={{ color: "#ffffff" }} onClick={() => setIsPasswordShown(!isPasswordShown)} />
+                <h2>Sign in</h2>
+                <p className='desc'>Connect your Journify account.<br />Don't have an account? <span className='fake-link'>Sign up!</span></p>
+                <p>{id}</p>
+            </div>
+
+            <div className='essencial wrapper'>
+                <div className='inputWrapper'>
+                    <span className='label'>Username</span>
+                    <input type='text' onChange={(e) => setLogin(e.target.value)} placeholder='Username' />
+                </div>
+                <div className='inputWrapper'>
+                    <span className='label'>Password</span>
+                    <input type={isPasswordShown ? 'text' : 'password'} onChange={(e) => setPasswd(e.target.value)} placeholder='Password' />
+                </div>
+                <p className='hint'>Forgot password?</p>
+                <p className='error'>{errorMessage}</p>
+            </div>
+
+            <div className='buttons wrapper'>
+                <button className='btn-hmp' onClick={() => sendLoginData()}>Login</button>
+                <button className='btn-mmp' onClick={() => sendRegisterData()}>Sign up</button>
+            </div>
+
         </div>
     )
 }
