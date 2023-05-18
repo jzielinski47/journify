@@ -16,6 +16,7 @@ const LoginScreen = ({ ws, errorMessage, id }) => {
     return (
         <div className='loginScreen'>
             <video src={arr[Math.floor(Math.random() * arr.length)]} autoPlay loop muted />
+
             <div className='section'>
                 <LoginPanel ws={ws} errorMessage={errorMessage} id={id} />
             </div>
@@ -23,6 +24,7 @@ const LoginScreen = ({ ws, errorMessage, id }) => {
                 <h1>Journify</h1>
                 <p>{id}</p>
             </div>
+
         </div>
     )
 }
