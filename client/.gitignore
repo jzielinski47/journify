@@ -12,6 +12,7 @@ dist
 dist-ssr
 *.local
 src/assets/*
+client\src\assets
 
 
 # Editor directories and files
