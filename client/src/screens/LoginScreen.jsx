@@ -1,14 +1,21 @@
 import React from 'react'
 
 import LoginPanel from '../components/LoginPanel/LoginPanel'
-import video from '../assets/video.mp4'
+
+import video1 from '../assets/video1.mp4'
+import video2 from '../assets/video1.mp4'
+import video3 from '../assets/video1.mp4'
+import video4 from '../assets/video1.mp4'
+import video5 from '../assets/video1.mp4'
+
+const arr = [video1, video2, video3, video4, video5]
 
 import './LoginScreen.css'
 
 const LoginScreen = ({ ws, errorMessage, id }) => {
     return (
         <div className='loginScreen'>
-            <video src={video} autoPlay loop muted />
+            <video src={arr[Math.floor(Math.random() * arr.length)]} autoPlay loop muted />
             <div className='section'>
                 <LoginPanel ws={ws} errorMessage={errorMessage} id={id} />
             </div>

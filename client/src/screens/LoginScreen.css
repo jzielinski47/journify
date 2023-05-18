@@ -6,7 +6,7 @@ video {
     object-fit: cover;
     overflow: hidden;
     min-height: 100vh;
-    opacity: 0.5;
+    opacity: 0.8;
 }
 
 .section {
