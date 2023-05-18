@@ -7,3 +7,4 @@ To start the project you need to open the client and the server directory separa
 
 ## at this stage (development process)
 ![image](https://github.com/jzielinski47/journify/assets/63867153/b96c10da-9d58-4a10-a00d-317bca00fe6c)
+![image](https://github.com/jzielinski47/journify/assets/63867153/0c5ff8de-446b-4572-9db4-2382e7581a62)
