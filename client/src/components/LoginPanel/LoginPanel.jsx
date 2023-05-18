@@ -6,10 +6,12 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 
+import './LoginPanel.css'
+
 const LoginPanel = ({ ws, errorMessage }) => {
 
     const [isPasswordShown, setIsPasswordShown] = useState(false)
-    
+
     const [login, setLogin] = useState('');
     const [passwd, setPasswd] = useState('');
     const [id, setID] = useState('')
