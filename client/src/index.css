@@ -96,7 +96,7 @@ body {
     color: #A82830;
   }
 
-  .loginForm {
+  .loginPanel {
     background-color: #121212;
   }
 
@@ -108,7 +108,7 @@ p {
   padding: 0;
 }
 
-.loginForm {
+.loginPanel {
   width: 100%;
   display: flex;
   flex-direction: column;
