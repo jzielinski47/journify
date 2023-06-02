@@ -1,24 +1,28 @@
 # Journify
-Journify is your personal vechicle assistant. If you ever planned a journey or a trip or a voyage or whatever, you have probably encountered multiple issues. With this app you will save time to do all the unnecessary stuff since the app will provide you with a map, a spotify integration, a list of necessary items you need to take with you, a to do list, a list of all the places you need to visit, a backpack feature, a reminder feature, a gas oil pricess feature and all the other features you need before a journey. Take a ride!
+Journify is your personal vechicle assistant. 
 
 ## Project Setup
 
-To start the project you need to open the client and the server directory separately in two different terminals. Run the server with `npm start`. Run the client with `npm run dev` for developer version. 
+To run the project at this stage, please follow these steps:
 
-## at this stage (development process)
+1. Open two separate terminals or use Visual Studio Code.
+2. In one terminal, navigate to the server directory.
+3. Start the server by running the command npm start.
+4. In the other terminal, go to the client directory.
+5. Run the client using the command npm run dev for the developer version.
 
-[current]
-[2/06/2023]
+By following these instructions, you'll be able to start the project at the development stage successfully.
+
+## Behind the design and development process
+The following pictures depict what the web application looks like.
 
 ![image](https://github.com/jzielinski47/journify/assets/63867153/158bd62f-18ff-4867-8e7f-37e50f95f4c2)
 
 
-[depreciated]
-[18/05/2023]
+## Functionalities Explanation
 
-![image](https://github.com/jzielinski47/journify/assets/63867153/b96c10da-9d58-4a10-a00d-317bca00fe6c)
-![image](https://github.com/jzielinski47/journify/assets/63867153/0c5ff8de-446b-4572-9db4-2382e7581a62)
-![image](https://github.com/jzielinski47/journify/assets/63867153/0f25af6f-3291-4305-8e9f-53272a0c41de)
+- REACT FRONTEND
+- NODE JS BACKEND
 
 
 
