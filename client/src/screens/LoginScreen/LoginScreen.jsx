@@ -1,6 +1,6 @@
 import React from 'react'
 
-import LoginPanel from '../components/LoginPanel/LoginPanel'
+import LoginPanel from '../../components/LoginPanel/LoginPanel'
 
 // import video1 from '../assets/video1.mp4'
 // import video2 from '../assets/video2.mp4'
@@ -13,7 +13,7 @@ import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 
-import image from '../assets/benz.jpg'
+import image from '../../assets/cover/benz.jpg'
 
 // const arr = [video1, video2, video3, video4, video5]
 

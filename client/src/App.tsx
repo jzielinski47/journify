@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react'
 import { client as ws } from '.'
 
-import LoginScreen from './screens/LoginScreen'
+import LoginScreen from './screens/LoginScreen/LoginScreen'
 
 const App = () => {
 
