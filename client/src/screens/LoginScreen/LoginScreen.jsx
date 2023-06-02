@@ -19,7 +19,7 @@ const LoginScreen = ({ ws, errorMessage, id }) => {
 
     const navigate = useNavigate();
 
-    useEffect(() => { id ? navigate('/dashboard') : null }, [id])
+    useEffect(() => { id ? navigate('/dashboard', { replace: true }) : null }, [id])
 
     return (
         <div className='loginScreen'>
