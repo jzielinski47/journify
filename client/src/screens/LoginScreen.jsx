@@ -8,7 +8,7 @@ import LoginPanel from '../components/LoginPanel/LoginPanel'
 // import video4 from '../assets/video4.mp4'
 // import video5 from '../assets/video5.mp4'
 
-import image from '../assets/merc.jpg'
+import image from '../assets/benz.jpg'
 
 // const arr = [video1, video2, video3, video4, video5]
 
