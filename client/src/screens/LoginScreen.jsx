@@ -25,7 +25,7 @@ const LoginScreen = ({ ws, errorMessage, id }) => {
             </div>
             <div className='section'>
                 <h1>Journify</h1>
-                <p>{id}</p>
+                <p>Your personal vechicle assistant<br />{id}</p>
             </div>
 
         </div>
