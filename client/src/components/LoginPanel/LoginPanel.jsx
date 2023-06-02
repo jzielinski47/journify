@@ -23,7 +23,7 @@ const LoginPanel = ({ ws, errorMessage, id }) => {
         <div className='loginPanelWrapper'>
 
             <div className='headline wrapper'>
-                <FontAwesomeIcon icon="fa-solid fa-car-burst" bounce size='2xl' style={{ color: "#ffffff" }} onClick={() => setIsPasswordShown(!isPasswordShown)} />
+                <FontAwesomeIcon icon="fa-solid fa-address-card" bounce size='2xl' style={{ color: "#ffffff" }} onClick={() => setIsPasswordShown(!isPasswordShown)} />
                 <h2>Sign in</h2>
                 <p className='desc'>Connect your Journify account.<br />Don't have an account? <span className='fake-link'>Sign up!</span></p>
                 <p>{id}</p>
