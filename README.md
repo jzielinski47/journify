@@ -6,8 +6,20 @@ Journify is your personal vechicle assistant. If you ever planned a journey or a
 To start the project you need to open the client and the server directory separately in two different terminals. Run the server with `npm start`. Run the client with `npm run dev` for developer version. 
 
 ## at this stage (development process)
+
+[current]
+[2/06/2023]
+
+![image](https://github.com/jzielinski47/journify/assets/63867153/158bd62f-18ff-4867-8e7f-37e50f95f4c2)
+
+
+[depreciated]
+[18/05/2023]
+
 ![image](https://github.com/jzielinski47/journify/assets/63867153/b96c10da-9d58-4a10-a00d-317bca00fe6c)
 ![image](https://github.com/jzielinski47/journify/assets/63867153/0c5ff8de-446b-4572-9db4-2382e7581a62)
 ![image](https://github.com/jzielinski47/journify/assets/63867153/0f25af6f-3291-4305-8e9f-53272a0c41de)
 
-[18/05/2023]
+
+
+
