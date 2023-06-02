@@ -1,12 +1,6 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import LoginPanel from '../../components/LoginPanel/LoginPanel'
-
-// import video1 from '../assets/video1.mp4'
-// import video2 from '../assets/video2.mp4'
-// import video3 from '../assets/video3.mp4'
-// import video4 from '../assets/video4.mp4'
-// import video5 from '../assets/video5.mp4'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
@@ -15,11 +9,18 @@ library.add(fas)
 
 import image from '../../assets/cover/benz.jpg'
 
+import { useNavigate } from 'react-router-dom'
+
 // const arr = [video1, video2, video3, video4, video5]
 
 import './LoginScreen.css'
 
 const LoginScreen = ({ ws, errorMessage, id }) => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => { id ? navigate('/dashboard') : null }, [id])
+
     return (
         <div className='loginScreen'>
             {/* <video className="cover-fill" src={arr[Math.floor(Math.random() * arr.length)]} autoPlay loop muted /> */}
