@@ -35,7 +35,7 @@ const LoginScreen = ({ ws, errorMessage, id }) => {
 
             <div className='security-warning'>
                 {/* <FontAwesomeIcon icon="fa-solid fa-shield-check" style={{ color: "#ffffff", }} /> */}
-                <p>All your data is secured by JAKUB ZIELIŃSKI © 2023</p>
+                <p>Secured by Jakub Zieliński © 2023</p>
             </div>
 
         </div>
