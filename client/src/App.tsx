@@ -7,7 +7,6 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 
 import LoginScreen from './screens/LoginScreen/LoginScreen'
 import DashboardScreen from './screens/DashboardScreen/DashboardScreen'
-import NavigationBar from './components/NavigationBar'
 
 const App = () => {
 
@@ -42,8 +41,8 @@ const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/'>
-        <Route index element={<LoginScreen ws={ws} id={id} errorMessage={errorMessage} />} />
-        <Route path='/dashboard' element={<DashboardScreen />} />
+        <Route index element={<LoginScreen id={id} ws={ws} errorMessage={errorMessage} />} />
+        <Route path='/dashboard' element={<DashboardScreen id={id} />} />
       </Route >
     )
   )

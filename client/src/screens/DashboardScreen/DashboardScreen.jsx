@@ -1,9 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './DashboardScreen.css'
 
-const DashboardScreen = () => {
+import { useNavigate } from 'react-router-dom'
+
+
+const DashboardScreen = ({ id }) => {
+
+    const navigate = useNavigate();
+
+    useEffect(() => { id ? null : navigate('/', { replace: true }) }, [id])
+
     return (
-        <div>DashboardScreen</div>
+        <div>{id}</div>
     )
 }
 
