@@ -3,7 +3,6 @@ import './DashboardScreen.css'
 
 import { useNavigate } from 'react-router-dom'
 
-
 const DashboardScreen = ({ id }) => {
 
     const navigate = useNavigate();
