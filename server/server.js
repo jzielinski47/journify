@@ -38,61 +38,53 @@ webSocketServer.on('connection', (socket, req) => {
 const listenForTraffic = (socket, message) => {
 
     const msg = message.toString().split('&');
-    switch (msg[0]) {
+    const command = msg[0];
+    const login = msg[1].split('=')[1].toString();
+    const password = msg[2].split('=')[1].toString();
+
+    switch (command) {
         case '%login':
 
-            login = msg[1].split('=')[1].toString()
-            password = msg[2].split('=')[1].toString()
+            const user = users.find(user => user.name === login);
 
-            if (usernames.includes(login)) {
-                users.forEach(user => {
-                    if (user.name === login && user.password === password) {
-                        socket.send('%authorized=' + socket.id)
-                    } else {
-                        socket.send(`password is not correct`)
-                    }
-                })
+            if (user) {
+                if (user.password === password) {
+                    socket.send('%authorized=' + socket.id);
+                } else {
+                    socket.send('Password is not correct');
+                }
             } else {
-                socket.send(`username is not correct`)
+                socket.send('Username is not correct');
             }
 
             break;
 
         case '%register':
 
-            login = msg[1].split('=')[1].toString()
-            password = msg[2].split('=')[1].toString()
-
-            if (login.length > 0 && password.length > 0) {
-                if (!usernames.includes(login) && !sessions.includes(socket.id)) {
-
-                    let data = { id: socket.id, name: login, password: password }
-
-                    users.push(data);
-                    usernames.push(login);
-                    sessions.push(socket.id)
-
-                    socket.send(`user ${login} created`)
-                } else if (sessions.includes(socket.id)) {
-                    socket.send(`You can't create another account in the same session`)
-                } else {
-                    socket.send(`user ${login} exists`)
-                }
+            if (login.length === 0 || password.length === 0) {
+                socket.send('Your login or password is too short');
+            } else if (usernames.includes(login)) {
+                socket.send(`User ${login} already exists`);
+            } else if (sessions.includes(socket.id)) {
+                socket.send(`You can't create another account in the same session`);
             } else {
-                socket.send(`your login or your password is too short`)
+                const data = { id: socket.id, name: login, password: password };
+
+                users.push(data);
+                usernames.push(login);
+                sessions.push(socket.id);
+                socket.send(`User ${login} created`);
             }
-
-
-
-            console.log(users)
-
-
+            console.log(users);
+            break;
     }
-}
+};
+
 
 const getUniqueID = () => {
-    const s4 = () => { return Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1) }
-    return s4() + s4() + s4() + '-' + s4() + s4() + s4()
-}
+    const randomHex = () => Math.floor((1 + Math.random()) * 0x10000).toString(16).substring(1);
+    return `${randomHex()}${randomHex()}${randomHex()}-${randomHex()}${randomHex()}${randomHex()}`;
+};
+
 
 server.listen(port, () => console.log(`app listening on port ${port}`))
