@@ -1,9 +1,9 @@
 import React from 'react'
 import './DashboardScreen.css'
 
-const DashboardScreen = () => {
+const DashboardScreen = ({ id }) => {
     return (
-        <div>DashboardScreen</div>
+        <div>{id}</div>
     )
 }
 
