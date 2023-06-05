@@ -21,7 +21,7 @@ The following pictures depict what the web application looks like.
 
 ## Functionalities Explanation
 
-- REACT FRONTEND
+- REACT FRONTEND (REDUX)
 - NODE JS BACKEND
 
 
