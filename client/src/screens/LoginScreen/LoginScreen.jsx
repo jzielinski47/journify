@@ -2,26 +2,25 @@ import React, { useEffect } from 'react'
 
 import LoginPanel from '../../components/LoginPanel/LoginPanel'
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { fas } from '@fortawesome/free-solid-svg-icons'
-library.add(fas)
-
 import image from '../../assets/cover/benz.jpg'
 
 import { useNavigate } from 'react-router-dom'
-import { authorize, unauthorize } from '../../store'
 import { useDispatch, useSelector } from 'react-redux'
 
+import { authorize, unauthorize } from '../../slices/userSlice'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
 import './LoginScreen.css'
+library.add(fas)
 
 const LoginScreen = ({ errorMessage, id }) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
 
-    const token = useSelector((state) => state.user.value.token)
-    const ws = useSelector((state) => state.ws.value.webSocket)
+    const token = useSelector((state) => state.user?.value?.token ?? null);
 
     useEffect(() => { id ? dispatch(authorize({ token: id })) : null }, [id])
     useEffect(() => { token ? navigate('/dashboard', { replace: true }) : null }, [token])
@@ -32,7 +31,7 @@ const LoginScreen = ({ errorMessage, id }) => {
             <img className="cover-fill" src={image} />
 
             <div className='section'>
-                <LoginPanel ws={ws} errorMessage={errorMessage} id={id} />
+                <LoginPanel errorMessage={errorMessage} id={id} />
             </div>
             <div className='section'>
                 <h1>Journify</h1>
@@ -40,7 +39,7 @@ const LoginScreen = ({ errorMessage, id }) => {
             </div>
 
             <div className='security-warning'>
-                <FontAwesomeIcon icon="fa-solid fa-shield-check" style={{ color: "#ffffff", }} />
+                <FontAwesomeIcon icon="fa-solid fa-shield" size='lg' style={{ color: "#ffffff", }} />
                 <p>Secured by Jakub Zieliński © 2023</p>
             </div>
 

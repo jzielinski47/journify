@@ -8,21 +8,16 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import LoginScreen from './screens/LoginScreen/LoginScreen'
 import DashboardScreen from './screens/DashboardScreen/DashboardScreen'
 
-import { Provider, useDispatch, useSelector } from 'react-redux'
+import { Provider } from 'react-redux'
 import { store } from './store'
-import { setWS } from './slices/wsSlice'
 
 const App = () => {
-
-  const dispatch = useDispatch();
 
   const [isConnected, setIsConnected] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [id, setID] = useState(null)
 
   useEffect(() => {
-
-    dispatch(setWS({ webSocket: ws }))
 
     ws.onopen = () => {
       console.log('connected');
@@ -43,8 +38,6 @@ const App = () => {
     }
 
   }, [])
-
-  const sendData = (message: string) => ws.send(message)
 
   const router = createBrowserRouter(
     createRoutesFromElements(

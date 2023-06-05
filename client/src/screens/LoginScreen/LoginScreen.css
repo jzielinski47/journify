@@ -36,4 +36,9 @@
     right: 2%;
     bottom: 2%;
     opacity: 0.38;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5em;
 }

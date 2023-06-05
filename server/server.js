@@ -23,7 +23,6 @@ webSocketServer.on('connection', (socket) => {
     });
 
     socket.on('message', message => {
-        console.log('[received]:', message);
         listenForTraffic(socket, message);
     });
 
@@ -35,7 +34,7 @@ webSocketServer.on('connection', (socket) => {
 const listenForTraffic = (socket, message) => {
 
     const msg = message.toString().split('&');
-
+    console.log(msg)
     const command = msg[0];
     const login = msg[1].split('=')[1];
     const password = msg[2].split('=')[1];
