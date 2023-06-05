@@ -16,7 +16,6 @@ const LoginPanel = ({ ws, errorMessage, id }) => {
     const [passwd, setPasswd] = useState('');
 
     const sendLoginData = () => ws.send(`%login&login=${login}&passwd=${passwd}`)
-
     const sendRegisterData = () => ws.send(`%register&login=${login}&passwd=${passwd}`)
 
     return (
