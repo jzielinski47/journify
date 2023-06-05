@@ -13,7 +13,6 @@ const sessions = [];
 
 const garage = []
 
-
 const webSocketServer = new WebSocket.Server({ server });
 webSocketServer.on('connection', (socket) => {
     socket.id = getUniqueID();

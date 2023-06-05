@@ -1,17 +1,13 @@
 import { configureStore, createSlice } from '@reduxjs/toolkit';
 
-const initialState = { value: { id: 0 } };
+const initialState = { value: { token: null } };
 
 const userSlice = createSlice({
     name: 'user',
     initialState: initialState,
     reducers: {
-        authorize: (state, action) => {
-            state.value = action.payload;
-        },
-        unauthorize: (state, action) => {
-            return initialState;
-        }
+        authorize: (state, action) => { state.value = action.payload },
+        unauthorize: (state, action) => initialState
     }
 });
 
