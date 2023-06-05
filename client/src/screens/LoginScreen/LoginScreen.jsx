@@ -10,6 +10,8 @@ library.add(fas)
 import image from '../../assets/cover/benz.jpg'
 
 import { useNavigate } from 'react-router-dom'
+import { authorize, unauthorize } from '../../store'
+import { useDispatch } from 'react-redux'
 
 // const arr = [video1, video2, video3, video4, video5]
 

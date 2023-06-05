@@ -8,8 +8,8 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import LoginScreen from './screens/LoginScreen/LoginScreen'
 import DashboardScreen from './screens/DashboardScreen/DashboardScreen'
 
-// import { Provider } from 'react-redux'
-// import { store } from './store'
+import { Provider } from 'react-redux'
+import { store } from './store'
 
 const App = () => {
 
@@ -52,8 +52,9 @@ const App = () => {
 
   return (
     <div className='App'>
-      {/* <Provider store={store}></Provider> */}
-      <RouterProvider router={router} />
+      <Provider store={store}>
+        <RouterProvider router={router} />
+      </Provider>
 
     </div>
   )
