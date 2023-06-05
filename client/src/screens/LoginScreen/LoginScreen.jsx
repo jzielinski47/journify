@@ -24,7 +24,7 @@ const LoginScreen = ({ ws, errorMessage, id }) => {
 
     const token = useSelector((state) => state.user.value.token)
 
-    useEffect(() => { id ? () => dispatch(authorize({ token: id })) : null }, [id])
+    useEffect(() => { id ? dispatch(authorize({ token: id })) : null }, [id])
     useEffect(() => { token ? navigate('/dashboard', { replace: true }) : null }, [token])
 
     return (
