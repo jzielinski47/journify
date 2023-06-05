@@ -39,13 +39,11 @@ const App = () => {
 
   }, [])
 
-  const sendData = (message: string) => ws.send(message)
-
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/'>
-        <Route index element={<LoginScreen id={id} ws={ws} errorMessage={errorMessage} />} />
-        <Route path='/dashboard' element={<DashboardScreen id={id} />} />
+        <Route index element={<LoginScreen id={id} errorMessage={errorMessage} />} />
+        <Route path='/dashboard' element={<DashboardScreen />} />
       </Route >
     )
   )
