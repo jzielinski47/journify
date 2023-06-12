@@ -1,5 +1,3 @@
-//@ts-nocheck
-
 import { useEffect, useState } from 'react'
 import { client as ws } from '.'
 
@@ -13,6 +11,7 @@ import { store } from './store'
 
 const App = () => {
 
+  // web socket related states
   const [isConnected, setIsConnected] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
   const [id, setID] = useState(null)

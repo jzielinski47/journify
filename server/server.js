@@ -7,7 +7,9 @@ const server = http.createServer(app);
 
 const port = 8000;
 
-const users = [];
+const default_admin = { id: 0, name: 'admin', password: 'admin' }
+
+const users = [default_admin];
 const usernames = [];
 const sessions = [];
 
