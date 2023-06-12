@@ -17,6 +17,7 @@ By following these instructions, you'll be able to start the project at the deve
 The following pictures depict what the web application looks like.
 
 ![image](https://github.com/jzielinski47/journify/assets/63867153/158bd62f-18ff-4867-8e7f-37e50f95f4c2)
+![image](https://github.com/jzielinski47/journify/assets/63867153/4ae3038a-4dbc-438c-9bb8-b7295bb4e3e4)
 
 
 ## Functionalities Explanation
