@@ -1,0 +1,9 @@
+.DashboardScreen {
+    padding: 1em;
+}
+
+.DashboardScreen nav {
+    display: flex;
+    gap: 1em;
+    padding: 1em 0;
+}
