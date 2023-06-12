@@ -25,6 +25,11 @@ The following pictures depict what the web application looks like.
 - REACT FRONTEND (REDUX)
 - NODE JS BACKEND
 
+## Libraries
+
+- FontAwesome Icons
+- React Suite
+- MUI
 
 
 
