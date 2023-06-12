@@ -14,6 +14,7 @@ const LoginPanel = ({ errorMessage }) => {
 
     const [isPasswordShown, setIsPasswordShown] = useState(false)
 
+    // auth
     const [login, setLogin] = useState('');
     const [passwd, setPasswd] = useState('');
 

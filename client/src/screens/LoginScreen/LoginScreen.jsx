@@ -26,14 +26,14 @@ const LoginScreen = ({ errorMessage, id }) => {
     useEffect(() => { token ? navigate('/dashboard', { replace: true }) : null }, [token])
 
     return (
-        <div className='loginScreen'>
+        <div className='LoginScreen'>
             {/* <video className="cover-fill" src={arr[Math.floor(Math.random() * arr.length)]} autoPlay loop muted /> */}
             <img className="cover-fill" src={image} />
 
             <div className='section'>
                 <LoginPanel errorMessage={errorMessage} id={id} />
             </div>
-            <div className='section'>
+            <div className='section hero'>
                 <h1>Journify</h1>
                 <p>Your personal vechicle assistant<br />{id}</p>
             </div>

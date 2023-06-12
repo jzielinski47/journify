@@ -12,7 +12,19 @@ const DashboardScreen = ({ id }) => {
     useEffect(() => { token ? null : navigate('/', { replace: true }) }, [token])
 
     return (
-        <div>{token}</div>
+        <div>
+            <nav>
+                <ul>Garage</ul>
+            </nav>
+
+            <div className='Panel'>
+                <h2>Title</h2>
+                <p>description</p>
+
+                <button>Add car</button>
+            </div>
+
+        </div>
     )
 }
 

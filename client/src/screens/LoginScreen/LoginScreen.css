@@ -1,3 +1,12 @@
+.LoginScreen {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 0;
+    min-height: 100vh;
+    width: 100%;
+}
+
 .cover-fill {
     width: 100%;
     height: 100%;
@@ -9,7 +18,7 @@
     opacity: 0.5;
 }
 
-.section {
+.LoginScreen .section {
     width: 50%;
     display: flex;
     justify-content: center;
@@ -18,17 +27,12 @@
     flex-direction: column;
 }
 
-.loginScreen {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    margin: 0;
-    min-height: 100vh;
-    width: 100%;
+.section.hero h1 {
+    font-size: 6em;
 }
 
-.section h1 {
-    font-size: 6em;
+.section.hero p {
+    font-size: 1.5em;
 }
 
 .security-warning {
