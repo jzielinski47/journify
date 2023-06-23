@@ -20,8 +20,11 @@ The following pictures depict what the web application looks like.
 ![image](https://github.com/jzielinski47/journify/assets/63867153/d8e184f1-1389-42bf-9af0-5f72d2da273c)
 ![image](https://github.com/jzielinski47/journify/assets/63867153/05ce3de5-11ab-4b2e-bd14-7017e8cc3c54)
 
+## Functionalities
 
-## Functionalities Explanation
+user profiles containing various data (logins, passwords); public garage containing all the cars and showing only the ones people own in their dashboard section.
+
+## Tech
 
 - REACT FRONTEND (REDUX)
 - NODE JS BACKEND
