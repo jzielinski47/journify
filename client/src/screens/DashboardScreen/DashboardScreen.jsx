@@ -8,14 +8,21 @@ import { Panel, Table } from 'rsuite';
 import 'rsuite/dist/rsuite-no-reset.min.css';
 // import 'rsuite/dist/rsuite.min.css';
 
+import { client as ws } from '../..'
+
 const { HeaderCell, Cell, Column } = Table;
 
-const DashboardScreen = () => {
+const DashboardScreen = ({ garage }) => {
 
     const navigate = useNavigate();
 
     const token = useSelector((state) => state.user.value.token)
     useEffect(() => { token ? null : navigate('/', { replace: true }) }, [token])
+
+    const get = (id, subject) => ws.send(`%get&subject=${subject}`);
+    useEffect(() => get(token, 'cars'), [])
+
+    useEffect(() => { console.log(garage) }, [garage])
 
     return (
         <div className='DashboardScreen'>
@@ -25,9 +32,10 @@ const DashboardScreen = () => {
             </nav>
 
             <div className='dashboard'>
+
                 <Panel header="Your Garage" bordered shaded bodyFill style={{ display: 'inline-block', width: 1200 }} >
 
-                    <Table height={400}>
+                    <Table height={400} data={garage} >
                         <Column width={70} align="center" fixed>
                             <HeaderCell>Id</HeaderCell>
                             <Cell dataKey="id" />
@@ -35,21 +43,21 @@ const DashboardScreen = () => {
 
                         <Column width={200} fixed>
                             <HeaderCell>Brand</HeaderCell>
-                            <Cell dataKey="car" />
+                            <Cell dataKey="brand" />
                         </Column>
 
                         <Column width={200}>
                             <HeaderCell>Model</HeaderCell>
-                            <Cell dataKey="city" />
+                            <Cell dataKey="model" />
                         </Column>
 
                         <Column width={200}>
                             <HeaderCell>Year</HeaderCell>
-                            <Cell dataKey="email" />
+                            <Cell dataKey="year" />
                         </Column>
                         <Column width={300}>
                             <HeaderCell>Owner</HeaderCell>
-                            <Cell dataKey="owner" />
+                            <Cell dataKey="owner_name" />
 
 
                         </Column>
