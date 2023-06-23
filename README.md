@@ -18,6 +18,7 @@ The following pictures depict what the web application looks like.
 
 ![image](https://github.com/jzielinski47/journify/assets/63867153/158bd62f-18ff-4867-8e7f-37e50f95f4c2)
 ![image](https://github.com/jzielinski47/journify/assets/63867153/d8e184f1-1389-42bf-9af0-5f72d2da273c)
+![image](https://github.com/jzielinski47/journify/assets/63867153/05ce3de5-11ab-4b2e-bd14-7017e8cc3c54)
 
 
 ## Functionalities Explanation
