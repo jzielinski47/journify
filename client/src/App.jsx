@@ -16,6 +16,8 @@ const App = () => {
   const [errorMessage, setErrorMessage] = useState('')
   const [id, setID] = useState(null)
 
+  const [garage, setGarage] = useState([])
+
   useEffect(() => {
 
     ws.onopen = () => {
@@ -27,12 +29,21 @@ const App = () => {
 
       setErrorMessage('')
 
-      if (data.startsWith('%authorized')) {
-        setID(data.split('=')[1])
-      } else {
-        console.log(data)
-        setErrorMessage(data)
+      console.log(data)
+
+      if (typeof data === 'string') {
+        if (data.startsWith('%authorized')) {
+          setID(data.split('=')[1])
+        } else if (data.startsWith('%garage')) {
+          setGarage(JSON.parse(data.split('=')[1]))
+        } else {
+          setErrorMessage(data)
+        }
       }
+
+
+
+
 
     }
 
@@ -42,7 +53,7 @@ const App = () => {
     createRoutesFromElements(
       <Route path='/'>
         <Route index element={<LoginScreen id={id} errorMessage={errorMessage} />} />
-        <Route path='/dashboard' element={<DashboardScreen />} />
+        <Route path='/dashboard' element={<DashboardScreen garage={garage} />} />
       </Route >
     )
   )
@@ -52,7 +63,6 @@ const App = () => {
       <Provider store={store}>
         <RouterProvider router={router} />
       </Provider>
-
     </div>
   )
 }

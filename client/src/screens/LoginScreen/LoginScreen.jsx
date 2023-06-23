@@ -12,7 +12,7 @@ import { authorize, unauthorize } from '../../slices/userSlice'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import './LoginScreen.css'
-import { fas } from '@fortawesome/free-solid-svg-icons'
+import { faL, fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 
 const LoginScreen = ({ errorMessage, id }) => {
@@ -23,7 +23,7 @@ const LoginScreen = ({ errorMessage, id }) => {
     const token = useSelector((state) => state.user?.value?.token ?? null);
 
     useEffect(() => { id ? dispatch(authorize({ token: id })) : null }, [id])
-    useEffect(() => { token ? navigate('/dashboard', { replace: true }) : null }, [token])
+    useEffect(() => { token ? navigate('/dashboard', { replace: false }) : null }, [token])
 
     return (
         <div className='LoginScreen'>
