@@ -22,8 +22,11 @@ The following pictures depict what the web application looks like.
 
 ## Functionalities
 
-- user profiles containing various data (logins, passwords); 
-- public garage containing all the cars and showing only the ones the user owns in their dashboard section.
+- User authentication: Create an account and securely log in to the system using a password of your choice.
+- Token-based authorization: Access the app's features and functionalities through a secure token-based authentication system.
+- Personalized dashboard: Upon logging in, view a dedicated dashboard panel that displays only the cars owned by the user, while maintaining the complete array of cars on the server.
+- User profiles: Create and manage personalized user profiles, containing various data relevant to each user.
+- Public garage: Explore a public garage showcasing a wide range of cars, while only seeing and interacting with the cars owned by the user in their dashboard section.
 
 ## Tech
 
