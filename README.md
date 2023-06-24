@@ -22,7 +22,8 @@ The following pictures depict what the web application looks like.
 
 ## Functionalities
 
-user profiles containing various data (logins, passwords); public garage containing all the cars and showing only the ones people own in their dashboard section.
+- user profiles containing various data (logins, passwords); 
+- public garage containing all the cars and showing only the ones the user owns in their dashboard section.
 
 ## Tech
 
