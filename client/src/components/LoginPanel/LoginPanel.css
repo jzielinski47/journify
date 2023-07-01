@@ -43,7 +43,7 @@
 .loginPanelWrapper button {
     padding: 3px 18px;
     font-size: 1em;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .loginPanelWrapper input {
