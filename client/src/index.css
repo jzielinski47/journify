@@ -14,6 +14,7 @@
   -webkit-text-size-adjust: 100%;
 
   --main-white: rgba(255, 255, 255, 87%);
+  --main-white-60: rgba(255, 255, 255, 60%);
 
 
   --primary-color: #147CD9;
@@ -24,7 +25,9 @@
 
   --background-light: #242424;
   --background-dark: #1e1e1e;
-  --border-dark: #313131;
+  --border-dark: #2B2B2B;
+
+  --error-color: #A82830;
 }
 
 * {
@@ -107,6 +110,14 @@ body {
 
   .btn-mmp:hover {
     background-color: var(--secondary-60);
+  }
+
+  .nav-ul-component a {
+    color: var(--main-white)
+  }
+
+  .nav-ul-component a:hover {
+    color: var(--main-white-60)
   }
 
   input {

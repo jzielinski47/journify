@@ -22,14 +22,12 @@ const App = () => {
 
     ws.onopen = () => {
       console.log('connected');
-      setIsConnected(!isConnected)
+      setIsConnected(!isConnected);
     }
 
     ws.onmessage = ({ data }) => {
 
-      setErrorMessage('')
-
-      console.log(data)
+      setErrorMessage('')      
 
       if (typeof data === 'string') {
         if (data.startsWith('%authorized')) {
