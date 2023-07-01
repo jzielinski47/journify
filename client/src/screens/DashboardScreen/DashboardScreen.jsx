@@ -32,15 +32,24 @@ const DashboardScreen = ({ garage }) => {
                 <hr />
 
                 <nav>
-                    <ul><a href='#'><FontAwesomeIcon icon="fa-solid fa-house" /> Home</a></ul>
-                    <ul><a href='#'><FontAwesomeIcon icon="fa-solid fa-chart-network" /> Dashboard</a></ul>
-                    <ul><a href='#'><FontAwesomeIcon icon="fa-solid fa-gear" /> Settings</a></ul>
+                    <ul><a href='/dasboard'><FontAwesomeIcon icon="fa-solid fa-house" /> Home</a></ul>
+                    <ul><a href='/dashboard'><FontAwesomeIcon icon="fa-solid fa-layer-group" /> Dashboard</a></ul>
+                    <ul><a href='/settings'><FontAwesomeIcon icon="fa-solid fa-gear" /> Settings</a></ul>
 
                     <ul><a href='/' className='red'><FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" /> Log out</a></ul>
                 </nav>
             </div>
             <div className='dashboard'>
-                <div className='bar'></div>
+                <div className='bar'>
+                    <div className='section'>
+                        <h2>Dashboard</h2>
+                    </div>
+                    <div className='section'>
+                        <p>General</p>
+                        <p>Profile</p>
+                        <p>Garage</p>
+                    </div>
+                </div>
                 <div className='display'></div>
             </div>
 

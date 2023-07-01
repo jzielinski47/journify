@@ -7,7 +7,6 @@
 .DashboardScreen .navigation,
 .DashboardScreen .dashboard {
     display: flex;
-    padding: 2em;
     flex-direction: column;
     gap: 1.5em;
 }
@@ -16,7 +15,10 @@
     flex: 1;
     min-width: 150px;
     max-width: 200px;
-    border-right: 4px solid var(--border-dark);
+    border-right: 2px solid var(--border-dark);
+    padding: 2em;
+    background-color: var(--background-dark);
+
 }
 
 .navigation hr {
@@ -49,4 +51,30 @@ a.red:hover {
 
 nav a {
     text-decoration: none;
+    display: flex;
+    gap: 1em;
+    align-items: center;
+}
+
+.dashboard .bar {
+    background-color: var(--background-dark);
+}
+
+.dashboard .bar .section {
+    border-bottom: 2px solid var(--border-dark);
+    display: flex;
+    gap: 1em;
+}
+
+.dashboard .bar .section:nth-child(1) {
+    padding: 2.5em 1.5em 1em 1.5em;
+}
+
+.dashboard .bar .section:nth-child(2) {
+    padding: 1em 1.5em 1em 1.5em;
+
+}
+
+.dashboard .bar h2 {
+    font-weight: 500;
 }
