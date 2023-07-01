@@ -39,6 +39,14 @@
     gap: 1.5em;
 }
 
-ul.red {
+a.red {
     color: var(--error-color);
+}
+
+a.red:hover {
+    color: var(--error-color-60);
+}
+
+nav a {
+    text-decoration: none;
 }

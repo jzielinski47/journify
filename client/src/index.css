@@ -27,7 +27,8 @@
   --background-dark: #1e1e1e;
   --border-dark: #2B2B2B;
 
-  --error-color: #A82830;
+  --error-color: rgb(168, 40, 48);
+  --error-color-60: rgba(168, 41, 49, 0.6);
 }
 
 * {
@@ -138,7 +139,15 @@ body {
   }
 
   .error {
-    color: #A82830;
+    color: var(--error-color);
+  }
+
+  nav a {
+    color: var(--main-white);
+  }
+
+  nav a:hover {
+    color: var(--main-white-60);
   }
 
 }
