@@ -41,15 +41,15 @@
     gap: 1.5em;
 }
 
-a.red {
+ul.red {
     color: var(--error-color);
 }
 
-a.red:hover {
+ul.red:hover {
     color: var(--error-color-60);
 }
 
-nav a {
+nav ul {
     display: flex;
     align-items: center;
     text-decoration: none;
