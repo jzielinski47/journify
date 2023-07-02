@@ -4,8 +4,12 @@ import './DashboardScreen.css'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 
-
 import { client as ws } from '../..'
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+library.add(fas)
 
 const DashboardScreen = ({ garage }) => {
 
@@ -28,15 +32,24 @@ const DashboardScreen = ({ garage }) => {
                 <hr />
 
                 <nav>
-                    <ul>Home</ul>
-                    <ul>Dashboard</ul>
-                    <ul>Settings</ul>
+                    <ul><a href='/dasboard'><FontAwesomeIcon icon="fa-solid fa-house" /> Home</a></ul>
+                    <ul><a href='/dashboard'><FontAwesomeIcon icon="fa-solid fa-layer-group" /> Dashboard</a></ul>
+                    <ul><a href='/settings'><FontAwesomeIcon icon="fa-solid fa-gear" /> Settings</a></ul>
 
-                    <ul className='red'>Log out</ul>
+                    <ul><a href='/' className='red'><FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" /> Log out</a></ul>
                 </nav>
             </div>
             <div className='dashboard'>
-                <div className='bar'></div>
+                <div className='bar'>
+                    <div className='section'>
+                        <h2>Dashboard</h2>
+                    </div>
+                    <div className='section'>
+                        <p>General</p>
+                        <p>Profile</p>
+                        <p>Garage</p>
+                    </div>
+                </div>
                 <div className='display'></div>
             </div>
 

@@ -3,7 +3,7 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: var(--background-light);
 
@@ -25,9 +25,11 @@
 
   --background-light: #242424;
   --background-dark: #1e1e1e;
+  --background-black: #121212;
   --border-dark: #2B2B2B;
 
-  --error-color: #A82830;
+  --error-color: rgb(168, 40, 48);
+  --error-color-60: rgba(168, 41, 49, 0.6);
 }
 
 * {
@@ -138,7 +140,15 @@ body {
   }
 
   .error {
-    color: #A82830;
+    color: var(--error-color);
+  }
+
+  nav a {
+    color: var(--main-white);
+  }
+
+  nav a:hover {
+    color: var(--main-white-60);
   }
 
 }
