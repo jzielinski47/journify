@@ -50,10 +50,10 @@ a.red:hover {
 }
 
 nav a {
-    text-decoration: none;
     display: flex;
-    gap: 1em;
     align-items: center;
+    text-decoration: none;
+    gap: 1em;
 }
 
 .dashboard .bar {
