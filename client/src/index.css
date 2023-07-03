@@ -114,14 +114,6 @@ body {
     background-color: var(--secondary-60);
   }
 
-  .nav-ul-component a {
-    color: var(--main-white)
-  }
-
-  .nav-ul-component a:hover {
-    color: var(--main-white-60)
-  }
-
   input {
     background-color: #000;
   }
@@ -143,12 +135,13 @@ body {
     color: var(--error-color);
   }
 
-  nav a {
+  nav ul {
     color: var(--main-white);
   }
 
-  nav a:hover {
+  nav ul:hover {
     color: var(--main-white-60);
+    cursor: pointer;
   }
 
 }

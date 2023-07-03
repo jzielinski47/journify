@@ -32,11 +32,11 @@ const DashboardScreen = ({ garage }) => {
                 <hr />
 
                 <nav>
-                    <ul><a href='/dasboard'><FontAwesomeIcon icon="fa-solid fa-house" /> Home</a></ul>
-                    <ul><a href='/dashboard'><FontAwesomeIcon icon="fa-solid fa-layer-group" /> Dashboard</a></ul>
-                    <ul><a href='/settings'><FontAwesomeIcon icon="fa-solid fa-gear" /> Settings</a></ul>
+                    <ul onClick={() => navigate('/dashboard', { replace: true })}><FontAwesomeIcon icon="fa-solid fa-house" /> Home</ul>
+                    <ul onClick={() => navigate('/dashboard', { replace: true })}><FontAwesomeIcon icon="fa-solid fa-layer-group" /> Dashboard</ul>
+                    <ul onClick={() => navigate('/dashboard', { replace: true })}><FontAwesomeIcon icon="fa-solid fa-gear" /> Settings</ul>
 
-                    <ul><a href='/' className='red'><FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" /> Log out</a></ul>
+                    <ul className='red' onClick={() => navigate('/', { replace: true })}> <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" /> Log out</ul>
                 </nav>
             </div>
             <div className='dashboard'>
