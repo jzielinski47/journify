@@ -1,5 +1,5 @@
 # Journify
-Journify is your personal vechicle assistant. 
+Journify is your personal vehicle assistant. 
 
 ## Project Setup
 
