@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './DashboardScreen.css'
 
 import { useNavigate } from 'react-router-dom'
@@ -11,6 +11,10 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
+
+import Home from './SubScreenComponents/Home';
+import Dashboard from './SubScreenComponents/Dashboard';
+import Settings from './SubScreenComponents/Settings';
 
 const DashboardScreen = ({ garage }) => {
 
@@ -27,6 +31,10 @@ const DashboardScreen = ({ garage }) => {
 
     useEffect(() => { console.log(garage) }, [garage])
 
+    const [activeTab, setActiveTab] = useState('home');
+    const handleTabChange = (tabName) => setActiveTab(tabName);
+
+
     return (
         <div className='DashboardScreen'>
             <div className='navigation'>
@@ -36,9 +44,9 @@ const DashboardScreen = ({ garage }) => {
                 <hr />
 
                 <nav>
-                    <ul onClick={() => navigate('/home', { replace: true })}><FontAwesomeIcon icon="fa-solid fa-house" /> Home</ul>
-                    <ul onClick={() => navigate('/dashboard', { replace: true })}><FontAwesomeIcon icon="fa-solid fa-layer-group" /> Dashboard</ul>
-                    <ul onClick={() => navigate('/settings', { replace: true })}><FontAwesomeIcon icon="fa-solid fa-gear" /> Settings</ul>
+                    <ul onClick={() => handleTabChange('home')}><FontAwesomeIcon icon="fa-solid fa-house" /> Home</ul>
+                    <ul onClick={() => handleTabChange('dashboard')}><FontAwesomeIcon icon="fa-solid fa-layer-group" /> Dashboard</ul>
+                    <ul onClick={() => handleTabChange('settings')}><FontAwesomeIcon icon="fa-solid fa-gear" /> Settings</ul>
 
                     <ul className='red' onClick={() => logOut()}> <FontAwesomeIcon icon="fa-solid fa-arrow-right-from-bracket" /> Log out</ul>
                 </nav>
@@ -54,7 +62,11 @@ const DashboardScreen = ({ garage }) => {
                         <p>Garage</p>
                     </div>
                 </div>
-                <div className='display'></div>
+                <div className='display'>
+                    {activeTab === 'home' && <Home />}
+                    {activeTab === 'dashboard' && <Dashboard />}
+                    {activeTab === 'settings' && <Settings />}
+                </div>
             </div>
 
 
