@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 
 import LoginPanel from '../../components/LoginPanel/LoginPanel'
 
-import image from '../../assets/cover/benz.jpg'
+// import image from '../../assets/cover/benz.jpg'
 
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
@@ -28,7 +28,7 @@ const LoginScreen = ({ errorMessage, id }) => {
     return (
         <div className='LoginScreen'>
             {/* <video className="cover-fill" src={arr[Math.floor(Math.random() * arr.length)]} autoPlay loop muted /> */}
-            <img className="cover-fill" src={image} />
+            <img className="cover-fill" src={'https://i.imgur.com/PsDx7bs.jpg'} />
 
             <div className='section'>
                 <LoginPanel errorMessage={errorMessage} id={id} />
