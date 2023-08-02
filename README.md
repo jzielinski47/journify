@@ -15,7 +15,7 @@ By following these instructions, you'll be able to start the project at the deve
 
 ## Behind the design and development process
 
-The app is currently deployed at: https://master--singular-malasada-66ca8e.netlify.app/
+The app is currently deployed at: https://journifyapp.netlify.app
 The server still is under development. If you want the full experience, download the app following the steps above.
 
 ## Functionalities
