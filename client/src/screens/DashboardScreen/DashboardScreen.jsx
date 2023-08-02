@@ -16,6 +16,8 @@ import Home from './SubScreenComponents/Home';
 import Dashboard from './SubScreenComponents/Dashboard';
 import Settings from './SubScreenComponents/Settings';
 
+import NavigationBar from '../../components/NavigationBar/NavigationBar'
+
 const DashboardScreen = ({ garage }) => {
 
     const navigate = useNavigate();
@@ -52,16 +54,7 @@ const DashboardScreen = ({ garage }) => {
                 </nav>
             </div>
             <div className='dashboard'>
-                <div className='bar'>
-                    <div className='section'>
-                        <h2>Dashboard</h2>
-                    </div>
-                    <div className='section'>
-                        <p>General</p>
-                        <p>Profile</p>
-                        <p>Garage</p>
-                    </div>
-                </div>
+                <NavigationBar title={activeTab} />
                 <div className='display'>
                     {activeTab === 'home' && <Home />}
                     {activeTab === 'dashboard' && <Dashboard />}
