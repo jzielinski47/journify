@@ -14,11 +14,9 @@ To run the project at this stage, please follow these steps:
 By following these instructions, you'll be able to start the project at the development stage successfully.
 
 ## Behind the design and development process
-The following pictures depict what the web application looks like.
 
-![image](https://github.com/jzielinski47/journify/assets/63867153/158bd62f-18ff-4867-8e7f-37e50f95f4c2)
-![image](https://github.com/jzielinski47/journify/assets/63867153/d8e184f1-1389-42bf-9af0-5f72d2da273c)
-![image](https://github.com/jzielinski47/journify/assets/63867153/05ce3de5-11ab-4b2e-bd14-7017e8cc3c54)
+The app is currently deployed at: https://master--singular-malasada-66ca8e.netlify.app/
+The server still is under development. If you want the full experience, download the app following the steps above.
 
 ## Functionalities
 
