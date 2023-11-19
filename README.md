@@ -18,6 +18,12 @@ By following these instructions, you'll be able to start the project at the deve
 The app is currently deployed at: https://journifyapp.netlify.app
 The server still is under development. If you want the full experience, download the app following the steps above.
 
+## Screenshots
+![image](https://github.com/jzielinski47/journify/assets/63867153/20ddb2a8-d378-4f2a-86c5-0817c9b5ab97)
+![image](https://github.com/jzielinski47/journify/assets/63867153/54d3efc2-ae4a-4944-8171-cd06e1bc185f)
+
+
+
 ## Functionalities
 
 - User authentication: Create an account and securely log in to the system using a password of your choice.
