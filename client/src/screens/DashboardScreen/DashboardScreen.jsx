@@ -64,7 +64,7 @@ const DashboardScreen = ({ garage }) => {
                 </div>
                 <div className='display'>
                     {activeTab === 'home' && <Home />}
-                    {activeTab === 'dashboard' && <Dashboard />}
+                    {activeTab === 'dashboard' && <Dashboard garage={garage} />}
                     {activeTab === 'settings' && <Settings />}
                 </div>
             </div>
