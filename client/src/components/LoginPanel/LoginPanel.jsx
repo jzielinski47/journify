@@ -7,8 +7,10 @@ import { fas } from '@fortawesome/free-solid-svg-icons'
 library.add(fas)
 
 import './LoginPanel.css'
+import { client as ws } from '../..'
+import { useSelector } from 'react-redux'
 
-const LoginPanel = ({ ws, errorMessage, id }) => {
+const LoginPanel = ({ errorMessage }) => {
 
     const [isPasswordShown, setIsPasswordShown] = useState(false)
 
@@ -16,17 +18,17 @@ const LoginPanel = ({ ws, errorMessage, id }) => {
     const [passwd, setPasswd] = useState('');
 
     const sendLoginData = () => ws.send(`%login&login=${login}&passwd=${passwd}`)
-
     const sendRegisterData = () => ws.send(`%register&login=${login}&passwd=${passwd}`)
+    const token = useSelector((state) => state.user?.value?.token ?? null);
 
     return (
         <div className='loginPanelWrapper'>
 
             <div className='headline wrapper'>
-                <FontAwesomeIcon icon="fa-solid fa-car-burst" bounce size='2xl' style={{ color: "#ffffff" }} onClick={() => setIsPasswordShown(!isPasswordShown)} />
+                <FontAwesomeIcon icon="fa-solid fa-address-card" bounce size='2xl' style={{ color: "#ffffff" }} onClick={() => setIsPasswordShown(!isPasswordShown)} />
                 <h2>Sign in</h2>
                 <p className='desc'>Connect your Journify account.<br />Don't have an account? <span className='fake-link'>Sign up!</span></p>
-                <p>{id}</p>
+                <p>{token}</p>
             </div>
 
             <div className='essencial wrapper'>

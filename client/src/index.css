@@ -3,9 +3,9 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
+  color-scheme: dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: var(--background-light);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,17 +13,30 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  --primary-color: #bb86fc;
-  --primary-30-color: #66488b;
-  --primary-14-color: #5f4283;
+  --main-white: rgba(255, 255, 255, 87%);
+  --main-white-60: rgba(255, 255, 255, 60%);
 
-  --secondary-color: #a586fc;
-  --secondary-30-color: #634f99;
-  --secondary-14-color: #66529c;
+
+  --primary-color: #147CD9;
+  --primary-60: #0C4A82;
+
+  --secondary-color: #5E53F1;
+  --secondary-60: #7653d7;
+
+  --background-light: #242424;
+  --background-dark: #1e1e1e;
+  --background-black: #121212;
+  --border-dark: #2B2B2B;
+
+  --error-color: rgb(168, 40, 48);
+  --error-color-60: rgba(168, 41, 49, 0.6);
 }
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
 }
 
 body {
@@ -38,17 +51,12 @@ body {
 }
 
 
-#root {
+#root,
+.App {
   margin: 0;
   padding: 0;
   width: 100%;
   min-height: 100vh;
-}
-
-.App {
-  margin: 0;
-  min-height: 100vh;
-  width: 100%;
 }
 
 @media (prefers-color-scheme: light) {
@@ -68,7 +76,7 @@ body {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    color: #e0e0e0;
+    color: var(--main-white);
     background-color: #121212;
   }
 
@@ -77,8 +85,8 @@ body {
   }
 
   .loginPanelWrapper {
-    background-color: #1e1e1e;
-    border: 1px solid #272727;
+    background-color: var(--background-dark);
+    border: 1px solid var(--border-dark);
   }
 
   button {
@@ -87,21 +95,23 @@ body {
   }
 
   .btn-hmp {
-    color: #212121;
-    background-color: var(--primary-color);
-  }
-
-  .btn-mmp {
-    color: #212121;
+    color: var(--main-white);
     background-color: var(--secondary-color);
   }
 
   .btn-hmp:hover {
-    background-color: var(--primary-30-color);
+    background-color: var(--secondary-60);
+  }
+
+  .btn-mmp {
+    color: var(--main-white);
+    /* background-color: var(--secondary-color); */
+    background-color: transparent;
+    border: 1px solid var(--secondary-color);
   }
 
   .btn-mmp:hover {
-    background-color: var(--secondary-30-color);
+    background-color: var(--secondary-60);
   }
 
   input {
@@ -118,11 +128,20 @@ body {
   }
 
   .fake-link {
-    color: var(--primary-color);
+    color: var(--secondary-color);
   }
 
   .error {
-    color: #A82830;
+    color: var(--error-color);
+  }
+
+  nav ul {
+    color: var(--main-white);
+  }
+
+  nav ul:hover {
+    color: var(--main-white-60);
+    cursor: pointer;
   }
 
 }

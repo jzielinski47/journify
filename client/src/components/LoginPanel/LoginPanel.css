@@ -1,9 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    line-height: 1.5;
-}
-
 .loginPanelWrapper {
     display: flex;
     flex-direction: column;
@@ -11,7 +5,7 @@
     padding: 3em 3em;
     border-radius: 2em;
     min-width: 460px;
-    opacity: 0.85;
+    opacity: 0.95;
 }
 
 .loginPanelWrapper .wrapper,
@@ -49,7 +43,7 @@
 .loginPanelWrapper button {
     padding: 3px 18px;
     font-size: 1em;
-    font-weight: bold;
+    /* font-weight: bold; */
 }
 
 .loginPanelWrapper input {

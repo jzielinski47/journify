@@ -1,0 +1,93 @@
+.DashboardScreen {
+    width: 100%;
+    height: 100vh;
+    display: inline-flex;
+}
+
+.DashboardScreen .navigation,
+.DashboardScreen .dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+.DashboardScreen .navigation {
+    flex: 1;
+    min-width: 150px;
+    max-width: 200px;
+    border-right: 2px solid var(--border-dark);
+    padding: 2em;
+    background-color: var(--background-dark);
+
+}
+
+.navigation hr {
+    width: 100%;
+    height: 4px;
+    color: var(--border-dark);
+    border: none;
+    background: var(--border-dark);
+}
+
+.DashboardScreen .dashboard {
+    flex: 1;
+    background-color: var(--background-light);
+}
+
+.DashboardScreen nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5em;
+}
+
+ul.red {
+    color: var(--error-color);
+}
+
+ul.red:hover {
+    color: var(--error-color-60);
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    gap: 1em;
+}
+
+.dashboard .bar {
+    background-color: var(--background-dark);
+}
+
+.dashboard .bar .section {
+    border-bottom: 2px solid var(--border-dark);
+    display: flex;
+    gap: 1em;
+}
+
+.dashboard .bar .section:nth-child(1) {
+    padding: 2.5em 1.5em 1em 1.5em;
+}
+
+.dashboard .bar .section:nth-child(2) {
+    padding: 1em 1.5em 1em 1.5em;
+
+}
+
+.dashboard .bar h2 {
+    font-weight: 500;
+}
+
+.carmodel {
+    font-size: 1em;
+    display: block;
+    padding: 0.2em 2em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.carmodel .h {
+    font-weight: bold;
+}
