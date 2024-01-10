@@ -20,17 +20,15 @@ The server still is under development. If you want the full experience, download
 
 ## Screenshots
 ![image](https://github.com/jzielinski47/journify/assets/63867153/20ddb2a8-d378-4f2a-86c5-0817c9b5ab97)
-![image](https://github.com/jzielinski47/journify/assets/63867153/54d3efc2-ae4a-4944-8171-cd06e1bc185f)
-![image](https://github.com/jzielinski47/journify/assets/63867153/f8979670-aebe-4863-bd10-10fffda3e13e)
+![image](https://github.com/jzielinski47/journify/assets/63867153/c25a1376-ee16-4e21-9fc2-8325a2899b42)
 
-// 10.01.2024 updated display
-![image](https://github.com/jzielinski47/journify/assets/63867153/b639812b-1205-4b5b-8728-d5838f594db5)
 
 
 
 ## Functionalities
 
 - User authentication: Create an account and securely log in to the system using a password of your choice.
+- Log in and out feature within one session not refreshing the page.
 - Token-based authorization: Access the app's features and functionalities through a secure token-based authentication system.
 - Personalized dashboard: Upon logging in, view a dedicated dashboard panel that displays only the cars owned by the user, while maintaining the complete array of cars on the server.
 - User profiles: Create and manage personalized user profiles, containing various data relevant to each user.
@@ -47,5 +45,5 @@ The server still is under development. If you want the full experience, download
 - React Suite
 - MUI
 
-
+The project is fully developed and designed by me, Jakub Zieliński. (2023-2024)
 
