@@ -36,7 +36,7 @@ const LoginScreen = ({ errorMessage, id }) => {
             </div>
             <div className='section hero'>
                 <h1>Journify</h1>
-                <p>Your personal vechicle assistant<br />{id}</p>
+                <p>Your personal vehicle assistant<br />{id}</p>
             </div>
 
             <div className='security-warning'>
