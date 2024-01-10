@@ -20,20 +20,20 @@ const DashboardScreen = ({ garage }) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const token = useSelector((state) => state.user.value.token);
+    const [isLoggingOut, setIsLoggingOut] = useState(false);
 
-    const token = useSelector((state) => state.user.value.token)
     useEffect(() => { token ? null : navigate('/', { replace: true }) }, [token])
 
     const get = (id, subject) => ws.send(`%get&subject=${subject}`);
-    useEffect(() => get(token, 'cars'), [])
+    useEffect(() => get(token, 'cars'), [token])
 
     const logOut = () => {
-
-        ws.send('%logout');
-        // Dispatch the unauthorize action to reset the token in Redux store
-        dispatch(unauthorize());
-
-        navigate('/', { replace: true });
+        if (!isLoggingOut) {
+            setIsLoggingOut(true); // Disable logout functionality after first click
+            ws.send('%logout');
+            dispatch(unauthorize());
+        }
     }
 
     useEffect(() => { console.log(garage) }, [garage])
