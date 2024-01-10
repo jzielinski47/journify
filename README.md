@@ -23,6 +23,8 @@ The server still is under development. If you want the full experience, download
 ![image](https://github.com/jzielinski47/journify/assets/63867153/54d3efc2-ae4a-4944-8171-cd06e1bc185f)
 ![image](https://github.com/jzielinski47/journify/assets/63867153/f8979670-aebe-4863-bd10-10fffda3e13e)
 
+// 10.01.2024 updated display
+![image](https://github.com/jzielinski47/journify/assets/63867153/b639812b-1205-4b5b-8728-d5838f594db5)
 
 
 
