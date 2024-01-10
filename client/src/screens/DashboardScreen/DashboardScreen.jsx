@@ -34,7 +34,6 @@ const DashboardScreen = ({ garage }) => {
     const [activeTab, setActiveTab] = useState('home');
     const handleTabChange = (tabName) => setActiveTab(tabName);
 
-
     return (
         <div className='DashboardScreen'>
             <div className='navigation'>
