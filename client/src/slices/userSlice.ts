@@ -6,8 +6,9 @@ export const userSlice = createSlice({
     name: 'user',
     initialState: initialState,
     reducers: {
-        authorize: (state, action) => { state.value = action.payload },
-        unauthorize: (state, action) => initialState
+        authorize: (state, action) => { state.value = action.payload; },
+        unauthorize: (state, action) => { state.value = initialState.value; } // Resets the state to the initial state
+
     }
 });
 

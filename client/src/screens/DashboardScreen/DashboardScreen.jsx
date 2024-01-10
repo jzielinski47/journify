@@ -27,7 +27,14 @@ const DashboardScreen = ({ garage }) => {
     const get = (id, subject) => ws.send(`%get&subject=${subject}`);
     useEffect(() => get(token, 'cars'), [])
 
-    const logOut = () => { navigate('/', { replace: true }); } // and reset token from redux
+    const logOut = () => {
+
+        ws.send('%logout');
+        // Dispatch the unauthorize action to reset the token in Redux store
+        dispatch(unauthorize());
+
+        navigate('/', { replace: true });
+    }
 
     useEffect(() => { console.log(garage) }, [garage])
 

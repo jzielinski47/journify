@@ -22,24 +22,42 @@ const App = () => {
 
     ws.onopen = () => {
       console.log('connected');
-      setIsConnected(!isConnected);
-    }
+      setIsConnected(true);
+    };
+
+    ws.onerror = (error) => {
+      console.log('WebSocket Error: ', error);
+      // Handle the error
+    };
 
     ws.onmessage = ({ data }) => {
 
-      setErrorMessage('')      
+      setErrorMessage('')
 
       if (typeof data === 'string') {
         if (data.startsWith('%authorized')) {
           setID(data.split('=')[1])
         } else if (data.startsWith('%garage')) {
           setGarage(JSON.parse(data.split('=')[1]))
+        } else if (data.startsWith('%loggedOut')) {
+          // Reset state upon logout confirmation from server
+          setID(null);
+          setGarage([]);
+          // Additional state reset if needed
         } else {
           setErrorMessage(data)
         }
       }
 
     }
+
+    // Cleanup function
+    return () => {
+      ws.onopen = null;
+      ws.onclose = null;
+      ws.onerror = null;
+      ws.onmessage = null;
+    };
 
   }, [])
 
