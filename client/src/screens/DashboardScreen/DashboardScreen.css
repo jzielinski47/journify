@@ -78,3 +78,16 @@ nav ul {
 .dashboard .bar h2 {
     font-weight: 500;
 }
+
+.carmodel {
+    font-size: 1em;
+    display: block;
+    padding: 0.2em 2em;
+    display: flex;
+    flex-direction: row;
+    gap: 0.5em;
+}
+
+.carmodel .h {
+    font-weight: bold;
+}

@@ -128,6 +128,19 @@ const listenForTraffic = (socket, message) => {
             console.log()
 
             break;
+        case '%logout':
+            const sessionId = socket.id;
+
+            // Reset or invalidate the socket.id
+            socket.id = null; // or assign a new ID, or handle it as per your logic
+
+            // Remove the sessionId from sessions array
+            const sessionIndex = sessions.indexOf(sessionId);
+            if (sessionIndex > -1) {
+                sessions.splice(sessionIndex, 1);
+            }
+            socket.send('%loggedOut');
+            break;
 
     }
 };

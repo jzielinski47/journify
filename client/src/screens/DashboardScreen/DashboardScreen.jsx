@@ -22,20 +22,26 @@ const DashboardScreen = ({ garage }) => {
 
     const navigate = useNavigate();
     const dispatch = useDispatch();
+    const token = useSelector((state) => state.user.value.token);
+    const [isLoggingOut, setIsLoggingOut] = useState(false);
 
-    const token = useSelector((state) => state.user.value.token)
     useEffect(() => { token ? null : navigate('/', { replace: true }) }, [token])
 
     const get = (id, subject) => ws.send(`%get&subject=${subject}`);
-    useEffect(() => get(token, 'cars'), [])
+    useEffect(() => get(token, 'cars'), [token])
 
-    const logOut = () => { navigate('/', { replace: true }); } // and reset token from redux
+    const logOut = () => {
+        if (!isLoggingOut) {
+            setIsLoggingOut(true); // Disable logout functionality after first click
+            ws.send('%logout');
+            dispatch(unauthorize());
+        }
+    }
 
     useEffect(() => { console.log(garage) }, [garage])
 
     const [activeTab, setActiveTab] = useState('home');
     const handleTabChange = (tabName) => setActiveTab(tabName);
-
 
     return (
         <div className='DashboardScreen'>
@@ -57,7 +63,7 @@ const DashboardScreen = ({ garage }) => {
                 <NavigationBar title={activeTab} />
                 <div className='display'>
                     {activeTab === 'home' && <Home />}
-                    {activeTab === 'dashboard' && <Dashboard />}
+                    {activeTab === 'dashboard' && <Dashboard garage={garage} />}
                     {activeTab === 'settings' && <Settings />}
                 </div>
             </div>

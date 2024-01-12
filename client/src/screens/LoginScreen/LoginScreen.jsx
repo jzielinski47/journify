@@ -11,8 +11,9 @@ import { authorize, unauthorize } from '../../slices/userSlice'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { library } from '@fortawesome/fontawesome-svg-core'
-import './LoginScreen.css'
-import { faL, fas } from '@fortawesome/free-solid-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import './LoginScreen.css';
+
 library.add(fas)
 
 const LoginScreen = ({ errorMessage, id }) => {
@@ -35,7 +36,7 @@ const LoginScreen = ({ errorMessage, id }) => {
             </div>
             <div className='section hero'>
                 <h1>Journify</h1>
-                <p>Your personal vechicle assistant<br />{id}</p>
+                <p>Your personal vehicle assistant<br />{id}</p>
             </div>
 
             <div className='security-warning'>
